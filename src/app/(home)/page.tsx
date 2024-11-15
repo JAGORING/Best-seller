@@ -1,4 +1,5 @@
 import styles from '@/styles/Home.module.css';
+import { CategoryList } from '@/types/book';
 import { Metadata } from 'next';
 import Link from 'next/link';
 
