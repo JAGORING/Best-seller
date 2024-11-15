@@ -1,6 +1,7 @@
+import BookCard from '@/components/BookCard';
 import styles from '@/styles/Detail.module.css';
+import { Book } from '@/types/book';
 import { Metadata } from 'next';
-import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Detail',
@@ -24,18 +25,7 @@ const Detail = async ({ params: { name } }: { params: { name: string } }) => {
 
       <div className={styles.bookGrid}>
         {bookList.books.map((book) => (
-          <div className={styles.bookBox} key={book.title}>
-            <div className={styles.imageWrapper}>
-              <img src={book.book_image} alt={book.description} />
-            </div>
-            <div className={styles.bookInfo}>
-              <h3 className={styles.bookTitle}>{book.title}</h3>
-              <p className={styles.bookAuthor}>{book.author}</p>
-              <Link href={book.amazon_product_url || ''} target="_blank" className={styles.learnMoreButton}>
-                Buy Now
-              </Link>
-            </div>
-          </div>
+          <BookCard key={book.primary_isbn10} book={book} />
         ))}
       </div>
     </section>
