@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Home',
 };
 
-export const API_URL = 'https://books-api.nomadcoders.workers.dev/lists';
+const API_URL = 'https://books-api.nomadcoders.workers.dev/lists';
 
 const fetchCategoryList = async () => {
   return fetch(API_URL)
@@ -18,11 +18,17 @@ const Home = async () => {
   const categoryList = await fetchCategoryList();
   return (
     <section className={styles.categoryBox}>
-      {categoryList.map((book: CategoryList) => (
-        <Link key={book.list_name_encoded} href={`/list/${book.list_name_encoded}`}>
-          <div className={styles.category}>{book.display_name}</div>
-        </Link>
-      ))}
+      <div className={styles.title}>
+        <h2>Explore Our Book Categories</h2>
+      </div>
+
+      <div className={styles.categoryList}>
+        {categoryList.map((book: CategoryList) => (
+          <Link key={book.list_name_encoded} href={`/list/${book.list_name_encoded}`}>
+            <div className={styles.category}>{book.display_name}</div>
+          </Link>
+        ))}
+      </div>
     </section>
   );
 };
