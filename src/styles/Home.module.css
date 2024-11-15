@@ -1,0 +1,26 @@
+.categoryBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.category {
+  text-align: center;
+  height: 48px;
+  line-height: 48px;
+  background-color: var(--light-green-color);
+  padding: 0 20px;
+  border-radius: 12px;
+  transition: background-color 0.5s ease, color 0.1s ease, transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category:hover {
+  background-color: var(--text-green-color);
+  color: var(--line-green-color);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.category:active {
+  transform: scale(0.95);
+}
