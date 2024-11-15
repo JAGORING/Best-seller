@@ -15,15 +15,15 @@ const fetchBookList = async (name: string) => {
 };
 
 const Detail = async ({ params: { name } }: { params: { name: string } }) => {
-  const categoryList: Book = await fetchBookList(name);
+  const bookList: Book = await fetchBookList(name);
   return (
     <section className={styles.bookList}>
       <div className={styles.title}>
-        <h2>{categoryList.display_name}</h2>
+        <h2>{bookList.display_name}</h2>
       </div>
 
       <div className={styles.bookGrid}>
-        {categoryList.books.map((book) => (
+        {bookList.books.map((book) => (
           <div className={styles.bookBox} key={book.title}>
             <div className={styles.imageWrapper}>
               <img src={book.book_image} alt={book.description} />
