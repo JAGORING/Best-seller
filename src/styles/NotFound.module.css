@@ -1,0 +1,11 @@
+.notFoundBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 5px;
+}
