@@ -1,5 +1,6 @@
 import styles from '@/styles/About.module.css';
 import { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -9,7 +10,7 @@ export default function About() {
   return (
     <section className={styles.aboutBox}>
       <div className={styles.imageWrapper}>
-        <img src="/about-us-img.jpg" alt="About Us" />
+        <Image src="/about-us-img.jpg" alt="About Us" width={600} height={280} />
       </div>
 
       <div className={styles.title}>
