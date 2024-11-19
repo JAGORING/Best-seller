@@ -23,11 +23,17 @@ const Detail = async ({ params: { name } }: { params: { name: string } }) => {
         <h2>{bookList.display_name}</h2>
       </div>
 
-      <div className={styles.bookGrid}>
-        {bookList.books.map((book) => (
-          <BookCard key={book.primary_isbn10} book={book} />
-        ))}
-      </div>
+      {bookList.books ? (
+        <div className={styles.bookGrid}>
+          {bookList.books.map((book) => (
+            <BookCard key={book.primary_isbn10} book={book} />
+          ))}
+        </div>
+      ) : (
+        <div className={styles.title}>
+          <h2>No matching data found.</h2>
+        </div>
+      )}
     </section>
   );
 };
