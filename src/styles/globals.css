@@ -12,6 +12,10 @@
   :root {
     --background: #141712;
     --foreground: #ffffff;
+    --text-green-color: #e0e5db;
+    --line-green-color: #758763;
+    --green-color: #f2f5f0;
+    --light-green-color: #758763;
   }
 }
 
